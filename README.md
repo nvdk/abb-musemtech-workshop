@@ -1,6 +1,6 @@
 # mu-gentsefeesten
 An example set up of mu.semte.ch microservices environment for workshops. This project contains a dataset of events, locations, organizers and themes of the gentse feesten.
-Documentation on the data can be found here:
+Documentation on the data can be found [here](data.org).
 
 ## Boot up the system
 
@@ -56,7 +56,6 @@ SELECT DISTINCT ?name ?straat ?gemeente WHERE {
 }
 ```
 
-
 ## Adding a new microservice
 Setting up your environment is done in three easy steps:  first you configure the running microservices and their names in `docker-compose.yml`, then you configure how requests are dispatched in `config/dispatcher.ex`, and lastly you start everything.
 
@@ -69,3 +68,8 @@ Alter the `docker-compose.yml` file so it contains all microservices you need.  
 Next, alter the file `config/dispatcher.ex` based on the example that is there by default.  Dispatch requests to the necessary microservices based on the names you used for the microservice.
 
 
+## Let's build a data visualisation
+Lets build a visualisation of this data, do you have any suggestions?
+Some ideas:
+- heatmap of event prices in ghent
+- does accessibility of events change over time (eg less accessible events in the evening?)

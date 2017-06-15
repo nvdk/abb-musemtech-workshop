@@ -1,0 +1,122 @@
+# Event
+RDF class: http://schema.org/Event	
+
+List of possible properties
+| property                                          | desc                                                                       |
+|---------------------------------------------------+----------------------------------------------------------------------------|
+| http://gentsefeesten.be/ns/isWheelchairUnfriendly | true if event is not accessible by wheelchair                              |
+| http://mu.semte.ch/vocabularies/core/uuid         | unique identifier used by mu-cl-resources                                  |
+| http://purl.org/dc/terms/created                  | metadata: time the event was created                                       |
+| http://purl.org/dc/terms/modified                 | metadata: time the event was modified                                      |
+| http://purl.org/dc/terms/subject                  | links an event to it's categories                                          |
+| http://schema.org/contactPoint                    | links an event to an information point                                     |
+| http://schema.org/contributor                     | links an event to a contributor (organisation)                             |
+| http://schema.org/description                     | description of the event                                                   |
+| http://schema.org/duration                        |                                                                            |
+| http://schema.org/endDate                         |                                                                            |
+| http://schema.org/frequency                       |                                                                            |
+| http://schema.org/identifier                      |                                                                            |
+| http://schema.org/image                           |                                                                            |
+| http://schema.org/inLanguage                      |                                                                            |
+| http://schema.org/isAccessibleForFree             |                                                                            |
+| http://schema.org/isPartOf                        |                                                                            |
+| http://schema.org/keywords                        |                                                                            |
+| http://schema.org/location                        | links an event to a place (where it's happening)                           |
+| http://schema.org/name                            |                                                                            |
+| http://schema.org/offers                          | links an event to offers (pricing)                                         |
+| http://schema.org/organizer                       | links an event to an organizer                                             |
+| http://schema.org/startDate                       |                                                                            |
+| http://schema.org/subEvent                        | links an event to its subevents, only leaf events have start and end dates |
+| http://schema.org/superEvent                      | links an event to its superevent                                           |
+| http://schema.org/typicalAgeRange                 |                                                                            |
+| http://schema.org/url                             |                                                                            |
+| http://schema.org/video                           | links an event to a video about the event                                  |
+
+
+# Offer
+RDF class: http://schema.org/Offer	
+| property                                       | desc                                                |
+|------------------------------------------------+-----------------------------------------------------|
+| http://gentsefeesten.be/ns/eligibleForDiscount | string, describes groups eligible for discounts     |
+| http://mu.semte.ch/vocabularies/core/uuid      |                                                     |
+| http://schema.org/availableAtOrFrom            | links an offer to a place where you can buy tickets |
+| http://schema.org/description                  |                                                     |
+| http://schema.org/price                        |                                                     |
+| http://schema.org/priceCurrency                |                                                     |
+| http://schema.org/priceValidUntil              |                                                     |
+
+# Organisatie
+RDF class: http://schema.org/Organization	
+| property                                        | description |
+|-------------------------------------------------+-------------|
+| http://mu.semte.ch/vocabularies/core/uuid       |             |
+| http://purl.org/dc/terms/created                |             |
+| http://purl.org/dc/terms/modified               |             |
+| http://schema.org/address                       |             |
+| http://schema.org/identifier                    |             |
+| http://schema.org/memberOf                      |             |
+| http://schema.org/name                          |             |
+| http://schema.org/url                           |             |
+
+# Place
+RDF class: http://schema.org/Place	
+
+| property                                          | description |
+|---------------------------------------------------+-------------|
+| http://gentsefeesten.be/ns/isWheelchairUnfriendly |             |
+| http://mu.semte.ch/vocabularies/core/uuid         |             |
+| http://purl.org/dc/terms/created                  |             |
+| http://purl.org/dc/terms/modified                 |             |
+| http://schema.org/additionalType                  |             |
+| http://schema.org/address                         |             |
+| http://schema.org/containedInPlace                |             |
+| http://schema.org/containsPlace                   |             |
+| http://schema.org/name                            |             |
+| http://schema.org/outDoors                        |             |
+
+
+# Address
+RDF class: http://schema.org/PostalAddress	
+| property                                        | description |
+|-------------------------------------------------+-------------|
+| http://mu.semte.ch/vocabularies/core/uuid       |             |
+| http://schema.org/addressCountry                |             |
+| http://schema.org/addressLocality               |             |
+| http://schema.org/postalCode                    |             |
+| http://schema.org/streetAddress                 |             |
+
+# Contact Point
+RDF class: http://schema.org/contactPoint
+| property                                        | description |
+|-------------------------------------------------+-------------|
+| http://mu.semte.ch/vocabularies/core/uuid       |             |
+| http://purl.org/dc/terms/created                |             |
+| http://purl.org/dc/terms/modified               |             |
+| http://schema.org/additionalType                |             |
+| http://schema.org/address                       |             |
+| http://schema.org/email                         |             |
+| http://schema.org/identifier                    |             |
+| http://schema.org/name                          |             |
+| http://schema.org/telephone                     |             |
+| http://schema.org/url                           |             |
+
+# Thema/Categorie
+RDF class: http://www.w3.org/2004/02/skos/core#Concept	
+
+| property                                        | description |
+|-------------------------------------------------+-------------|
+| http://purl.org/dc/terms/modified               |             |
+| http://mu.semte.ch/vocabularies/core/uuid       |             |
+| http://www.w3.org/1999/02/22-rdf-syntax-ns#type |             |
+| http://www.w3.org/2004/02/skos/core#prefLabel   |             |
+
+
+
+
+
+
+
+
+
+
+
