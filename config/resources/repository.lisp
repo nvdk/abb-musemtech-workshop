@@ -12,7 +12,6 @@
 ;; (s-url "http://purl.org/dc/terms/title")
 ;; as (s-prefix "dct:title")
 
-;; (add-prefix "dct" "http://purl.org/dc/terms/")
 
 
 ;;;;;
@@ -31,4 +30,8 @@
 ;; the mu.semte.ch organisation indicates that it will not be used
 ;; by them and that it shouldn't be used for permanent URIs.
 
-(add-prefix "ext" "http://mu.semte.ch/vocabularies/ext/")
+(add-prefix "gf" "http://gentsefeesten.be/ns/")
+(add-prefix "schema" "http://schema.org/")
+(add-prefix "skos" "http://www.w3.org/2004/02/skos/core#")
+(add-prefix "dcterms" "http://purl.org/dc/terms/")
+

@@ -5,7 +5,7 @@ services:
     links:
       - dispatcher:dispatcher
     ports:
-      - "80:80"
+      - "8000:80"
   dispatcher:
     image: semtech/mu-dispatcher:1.1.0
     links:
@@ -13,7 +13,7 @@ services:
     volumes:
       - ./config/dispatcher:/config
   db:
-    image: tenforce/virtuoso:1.0.0-virtuoso7.2.4
+    image: tenforce/virtuoso:1.2.0-virtuoso7.2.2
     environment:
       SPARQL_UPDATE: "true"
       DEFAULT_GRAPH: "http://mu.semte.ch/application"
@@ -27,3 +27,9 @@ services:
       - db:database
     volumes:
       - ./config/resources:/config
+  migrationsservice:
+    image: semtech/mu-migrations-service
+    links:
+      - db:database
+    volumes:
+      - ./config/migrations:/data/migrations

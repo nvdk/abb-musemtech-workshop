@@ -6,25 +6,77 @@
 ;; after altering this file.
 
 ;; Describe your resources here
+(define-resource event ()
+  :class (s-prefix "schema:Event")
+  :properties `((:created :string , (s-prefix "dcterms:created"))
+								(:modified :string ,(s-prefix "dcterms:modified"))
+								(:is-wheelchair-unfriendly :boolean,(s-prefix "gf:isWheelchairUnfriendly"))
+								(:description :string ,(s-prefix "schema:description"))
+								(:end-date :date ,(s-prefix "schema:endDate"))
+								(:start-date :date ,(s-prefix "schema:startDate"))
+								(:identifier :string ,(s-prefix "schema:identifier"))
+								(:language :string ,(s-prefix "schema:inLanguage"))
+								(:free :boolean ,(s-prefix "schema:isAccessibleForFree"))
+								(:keywords :string ,(s-prefix "schema:keywords"))
+								(:name :string ,(s-prefix "schema:name"))
+								(:url :string ,(s-prefix "schema:url"))
+								(:duration :string ,(s-prefix "schema:duration"))
+								(:frequency :string ,(s-prefix "schema:frequency"))
+								(:typical-age-range :string ,(s-prefix "schema:typicalAgeRange"))
+	              (:is-part-of :string ,(s-prefix "schema:isPartOf")))
+  :has-many `((event :via ,(s-prefix "schema:subEvent") :as "sub-events")
+						  (theme :via ,(s-prefix "dcterms:subject") :as "category"))
+  :has-one  `((event :via ,(s-prefix "schema:superEvent") :as "super-event")
+						  (location :via ,(s-prefix "schema:location") :as "location")
+							(contact-point :via ,(s-prefix "schema:contactPoint") :as "contact-point")
+							(organizer :via ,(s-prefix "schema:organizer") :as "organizer"))
+	:resource-base (s-url "http://gentse-feesten.stad.gent/event/")
+  :on-path "events")
 
-;; The general structure could be described like this:
-;;
-;; (define-resource <name-used-in-this-file> ()
-;;   :class <class-of-resource-in-triplestore>
-;;   :properties `((<json-property-name-one> <type-one> ,<triplestore-relation-one>)
-;;                 (<json-property-name-two> <type-two> ,<triplestore-relation-two>>))
-;;   :has-many `((<name-of-an-object> :via ,<triplestore-relation-to-objects>
-;;                                    :as "<json-relation-property>")
-;;               (<name-of-an-object> :via ,<triplestore-relation-from-objects>
-;;                                    :inverse t ; follow relation in other direction
-;;                                    :as "<json-relation-property>"))
-;;   :has-one `((<name-of-an-object :via ,<triplestore-relation-to-object>
-;;                                  :as "<json-relation-property>")
-;;              (<name-of-an-object :via ,<triplestore-relation-from-object>
-;;                                  :as "<json-relation-property>"))
-;;   :resource-base (s-url "<string-to-which-uuid-will-be-appended-for-uri-of-new-items-in-triplestore>")
-;;   :on-path "<url-path-on-which-this-resource-is-available>")
+(define-resource location ()
+	:class (s-prefix "schema:Place")
+  :properties `((:created :string ,(s-prefix "dcterms:created"))
+								(:modified :string ,(s-prefix "dcterms:modified"))
+								(:name :string ,(s-prefix "schema:name"))
+								(:is-wheelchair-unfriendly :boolean ,(s-prefix "gf:isWheelchairUnfriendly")))
+	:has-one `((address :via ,(s-prefix "schema:address") :as "address"))
+  :resource-base (s-url "http://gentse-feesten.stad.gent/place/")
+  :on-path "locations")
 
+(define-resource address ()
+	:class (s-prefix "schema:PostalAddress")
+:properties `((:created :string ,(s-prefix "dcterms:created"))
+								(:modified :string ,(s-prefix "dcterms:modified"))
+								(:country :string ,(s-prefix "schema:addressCountry"))
+								(:locality :string ,(s-prefix "schema:addressLocality"))
+								(:postal-code :string ,(s-prefix "schema:postalCode"))
+								(:street-address :string ,(s-prefix "schema:streetAddress")))
+  :resource-base (s-url "http://gentse-feesten.stad.gent/address/")
+  :on-path "address")
+	
+(define-resource theme ()
+	:class (s-prefix "skos:Concept")
+  :properties `((:created :string ,(s-prefix "dcterms:created"))
+								(:modified :string ,(s-prefix "dcterms:modified"))
+								(:name :string ,(s-prefix "skos:prefLabel")))
+  :resource-base (s-url "http://gentse-feesten.stad.gent/category/")
+  :on-path "categories")
+
+(define-resource contact-point ()
+	:class (s-prefix "schema:contactPoint")
+  :properties `((:created :string ,(s-prefix "dcterms:created"))
+								(:modified :string ,(s-prefix "dcterms:modified"))
+								(:name :string ,(s-prefix "schema:name")))
+  :resource-base (s-url "http://gentse-feesten.stad.gent/contact-point/")
+  :on-path "contact-points")
+
+(define-resource organizer ()
+	:class (s-prefix "schema:Organisation")
+  :properties `((:created :string ,(s-prefix "dcterms:created"))
+								(:modified :string ,(s-prefix "dcterms:modified"))
+								(:name :string ,(s-prefix "schema:name")))
+  :resource-base (s-url "http://gentse-feesten.stad.gent/organisations/")
+  :on-path "contact-points")
 
 ;; An example setup with a catalog, dataset, themes would be:
 ;;
