@@ -1,4 +1,4 @@
-# Event
+* Event
 RDF class: http://schema.org/Event	
 
 List of possible properties
@@ -33,7 +33,7 @@ List of possible properties
 | http://schema.org/video                           | links an event to a video about the event                                  |
 
 
-# Offer
+* Offer
 RDF class: http://schema.org/Offer	
 | property                                       | desc                                                |
 |------------------------------------------------+-----------------------------------------------------|
@@ -45,7 +45,7 @@ RDF class: http://schema.org/Offer
 | http://schema.org/priceCurrency                |                                                     |
 | http://schema.org/priceValidUntil              |                                                     |
 
-# Organisatie
+* Organisatie
 RDF class: http://schema.org/Organization	
 | property                                        | description |
 |-------------------------------------------------+-------------|
@@ -58,7 +58,7 @@ RDF class: http://schema.org/Organization
 | http://schema.org/name                          |             |
 | http://schema.org/url                           |             |
 
-# Place
+* Place
 RDF class: http://schema.org/Place	
 
 | property                                          | description |
@@ -75,7 +75,7 @@ RDF class: http://schema.org/Place
 | http://schema.org/outDoors                        |             |
 
 
-# Address
+* Address
 RDF class: http://schema.org/PostalAddress	
 | property                                        | description |
 |-------------------------------------------------+-------------|
@@ -85,7 +85,7 @@ RDF class: http://schema.org/PostalAddress
 | http://schema.org/postalCode                    |             |
 | http://schema.org/streetAddress                 |             |
 
-# Contact Point
+* Contact Point
 RDF class: http://schema.org/contactPoint
 | property                                        | description |
 |-------------------------------------------------+-------------|
@@ -100,7 +100,7 @@ RDF class: http://schema.org/contactPoint
 | http://schema.org/telephone                     |             |
 | http://schema.org/url                           |             |
 
-# Thema/Categorie
+* Thema/Categorie
 RDF class: http://www.w3.org/2004/02/skos/core#Concept	
 
 | property                                        | description |
